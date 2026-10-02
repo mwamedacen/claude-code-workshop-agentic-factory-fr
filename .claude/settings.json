@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "blockReadsOutsideWorkingDirectories": true,
+    "deny": [
+      "Edit",
+      "Write",
+      "Read(/.claude/**)",
+      "Read(/.git/**)",
+      "Read(/.gitignore)",
+      "Read(/.usine/**)",
+      "Read(/ateliers/**)",
+      "Read(/lib/**)",
+      "Read(/messager.mjs)",
+      "Read(/moteurs/**)",
+      "Read(/node_modules/**)",
+      "Read(/package.json)",
+      "Read(/package-lock.json)",
+      "Read(/README.md)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.config/**)",
+      "Read(**/.env*)"
+    ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [{ "hooks": [{ "type": "http", "url": "http://127.0.0.1:7781/hooks", "timeout": 2 }] }],
+    "PreToolUse": [{ "hooks": [{ "type": "http", "url": "http://127.0.0.1:7781/hooks", "timeout": 2 }] }],
+    "PostToolUseFailure": [{ "hooks": [{ "type": "http", "url": "http://127.0.0.1:7781/hooks", "timeout": 2 }] }],
+    "SubagentStart": [{ "hooks": [{ "type": "http", "url": "http://127.0.0.1:7781/hooks", "timeout": 2 }] }],
+    "SubagentStop": [{ "hooks": [{ "type": "http", "url": "http://127.0.0.1:7781/hooks", "timeout": 2 }] }],
+    "Stop": [{ "hooks": [{ "type": "http", "url": "http://127.0.0.1:7781/hooks", "timeout": 2 }] }]
+  }
+}
